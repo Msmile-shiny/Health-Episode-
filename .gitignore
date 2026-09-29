@@ -1,0 +1,6 @@
+# Office 锁文件
+~$*
+
+# Python
+__pycache__/
+*.pyc

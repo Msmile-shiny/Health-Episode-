@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Episode · AI Health Navigator — 概念演示</title>
+  <meta name="description" content="Episode 用结构化问询帮你建立一次健康事件：谨慎的自我分诊、症状趋势追踪，以及一份医生能快速读懂的 Doctor Handoff 就医摘要。本页面为虚构数据概念演示，不提供、也不替代专业医疗建议。">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#" data-nav="landing" aria-label="Episode 首页">
+        <span class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 12h3.2l2.1-5.6 3.6 11.2 2.4-5.6H21"/>
+          </svg>
+        </span>
+        <span class="brand-name">Episode</span>
+        <span class="brand-sub">AI Health Navigator</span>
+      </a>
+
+      <nav class="topnav" aria-label="主导航">
+        <a href="#" data-nav="landing">产品</a>
+        <a href="#" data-nav="intake">开始演示</a>
+      </nav>
+
+      <span class="demo-pill" title="本页面使用虚构数据">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4.5M12 15.6v.2"/></svg>
+        概念演示 · 不构成医疗建议
+      </span>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ 首页 / 产品定位 ============ -->
+    <section class="view is-active" id="view-landing" data-view="landing">
+
+      <div class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">AI Health Navigator · 健康导航</span>
+          <h1 class="hero-title">身体有点不舒服？<br>把模糊的不适，<em>梳理成清晰的下一步。</em></h1>
+          <p class="hero-sub">Episode 通过结构化问询，帮你建立一次「健康事件」：记录症状如何变化，给出谨慎的自我分诊与行动建议；当需要专业医疗时，自动生成一份简洁的就医摘要。</p>
+
+          <div class="hero-actions">
+            <button class="btn btn-primary btn-lg" data-nav="intake">
+              开始一次演示
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+            <button class="btn btn-ghost btn-lg" data-scroll="#how">看看它是怎么工作的</button>
+          </div>
+
+          <p class="hero-note">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/></svg>
+            本演示使用<strong>虚构示例数据</strong>，仅用于展示产品体验，<strong>不提供、也不替代专业医疗建议</strong>。
+          </p>
+        </div>
+
+        <!-- 产品预览卡片 -->
+        <div class="hero-visual" aria-hidden="true">
+          <div class="preview-card">
+            <div class="preview-top">
+              <span class="preview-title">喉咙痛伴低热</span>
+              <span class="preview-day">第 3 天</span>
+            </div>
+            <div class="preview-tier tier-warn">
+              <span class="tier-dot"></span>
+              密切观察 · 建议持续追踪
+            </div>
+            <div class="preview-chart">
+              <svg viewBox="0 0 260 96" preserveAspectRatio="none" class="sparkline">
+                <defs>
+                  <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#2a78d6" stop-opacity=".16"/>
+                    <stop offset="1" stop-color="#2a78d6" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <path class="spark-area" d="M10 26 C48 20 62 46 96 48 S 170 62 250 78 L250 96 L10 96 Z" fill="url(#sparkFill)"/>
+                <path class="spark-line" d="M10 26 C48 20 62 46 96 48 S 170 62 250 78" fill="none" stroke="#2a78d6" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="250" cy="78" r="4" fill="#2a78d6"/>
+              </svg>
+            </div>
+            <ul class="preview-actions">
+              <li>继续多喝水、多休息</li>
+              <li>若发热回升 → 咨询医生</li>
+            </ul>
+            <div class="preview-foot">
+              <span>Doctor Handoff 摘要</span>
+              <span class="preview-gen">已就绪</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 工作原理 -->
+      <div class="section" id="how">
+        <div class="section-head">
+          <span class="eyebrow">工作原理</span>
+          <h2>一次「健康事件」，从描述到下一步</h2>
+          <p>不是搜索引擎式的症状罗列，而是一条有始有终的线索。</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <span class="step-num">01</span>
+            <h3>说出你的感受</h3>
+            <p>用日常语言描述哪里不舒服，就像告诉家人一样，不需要医学术语。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">02</span>
+            <h3>结构化问询</h3>
+            <p>AI 引导你补充关键信息，并筛查需要警惕的危险信号，而不是替你下结论。</p>
+          </div>
+          <div class="step">
+            <span class="step-num">03</span>
+            <h3>追踪 + 下一步</h3>
+            <p>症状趋势一目了然；从「继续观察」到「尽快就医」，每一步都有据可循。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 核心能力 -->
+      <div class="section">
+        <div class="section-head">
+          <span class="eyebrow">核心能力</span>
+          <h2>为「拿不准的时候」设计</h2>
+        </div>
+        <div class="features">
+          <div class="feature">
+            <span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9.5 12l1.8 1.8 3.2-3.4"/></svg></span>
+            <h3>谨慎的自我分诊</h3>
+            <p>四层行动建议 —— 继续观察 / 密切观察 / 建议咨询 / 尽快就医。只导航，不诊断。</p>
+          </div>
+          <div class="feature">
+            <span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M4 16l4-5 3 3 5-7"/><circle cx="16" cy="7" r="1.4"/></svg></span>
+            <h3>症状趋势追踪</h3>
+            <p>每次「打卡」更新一条曲线，看清是好转还是加重，而不是靠记忆和感觉。</p>
+          </div>
+          <div class="feature">
+            <span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><path d="M9 12h6M9 16h6"/></svg></span>
+            <h3>Doctor Handoff 就医摘要</h3>
+            <p>把零散叙述整理成医生能快速读懂的摘要，让面诊的几分钟用在刀刃上。</p>
+          </div>
+          <div class="feature">
+            <span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg></span>
+            <h3>边界与隐私</h3>
+            <p>明确标注「不替代专业医疗」；你的健康数据只属于你，可随时导出或删除。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 信任说明 -->
+      <div class="section trust">
+        <div class="trust-card">
+          <div class="trust-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M12 8v4.5M12 15.6v.2"/></svg></div>
+          <h3>什么能做，什么不做</h3>
+          <p>Episode 帮你<strong>梳理、记录、导航</strong>，让你在和医生见面时更有准备。它<strong>不做诊断、不开处方、不提供紧急救援</strong>。如果出现呼吸困难、胸痛、意识模糊或严重不适，请直接拨打急救电话或前往急诊。</p>
+        </div>
+      </div>
+
+      <!-- 底部 CTA -->
+      <div class="section cta-band">
+        <h2>从一次真实的不适开始体验。</h2>
+        <p>大约 2 分钟，走完一次完整的 Health Episode。</p>
+        <button class="btn btn-primary btn-lg" data-nav="intake">开始演示</button>
+      </div>
+    </section>
+
+    <!-- ============ 开始 Health Episode · 结构化问询 ============ -->
+    <section class="view" id="view-intake" data-view="intake">
+      <div class="intake-shell">
+        <div class="intake-head">
+          <div>
+            <span class="eyebrow">开始一次 Health Episode</span>
+            <h2>结构化问询</h2>
+          </div>
+          <div class="intake-progress">
+            <span class="progress-label" id="intake-progress-label">第 1 / 6 步</span>
+            <div class="progress-track"><div class="progress-fill" id="intake-progress-fill"></div></div>
+          </div>
+        </div>
+
+        <div class="chat" id="chat" aria-live="polite"></div>
+        <div class="chat-input" id="chat-input"></div>
+
+        <p class="intake-disclaimer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4.5M12 15.6v.2"/></svg>
+          本问询仅用于演示，不构成诊断。如出现呼吸困难、胸痛、意识模糊等严重症状，请立即寻求紧急医疗帮助。
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ Episode 时间线 / 症状趋势 / 下一步行动 ============ -->
+    <section class="view" id="view-episode" data-view="episode">
+      <div class="episode-shell">
+        <div class="episode-head">
+          <div class="episode-title-block">
+            <span class="eyebrow">Health Episode · 进行中</span>
+            <h2 id="ep-title">喉咙痛伴低热</h2>
+            <p class="ep-meta" id="ep-meta">9 月 27 日起 · 第 3 天 · 上次更新 9/29 09:00</p>
+          </div>
+          <button class="btn btn-primary" data-nav="handoff">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/></svg>
+            生成就医摘要
+          </button>
+        </div>
+
+        <!-- 下一步行动分层 -->
+        <div class="tier-card" id="tier-card"></div>
+
+        <div class="episode-grid">
+          <div class="episode-main">
+            <!-- 症状趋势 -->
+            <div class="card">
+              <div class="card-head">
+                <div>
+                  <h3>症状趋势</h3>
+                  <p class="card-sub">0 = 无不适 · 10 = 最严重</p>
+                </div>
+                <button class="btn btn-subtle" id="btn-checkin">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                  再做一次打卡
+                </button>
+              </div>
+              <div class="chart-wrap" id="chart-wrap"></div>
+            </div>
+
+            <!-- 时间线 -->
+            <div class="card">
+              <div class="card-head">
+                <div>
+                  <h3>事件时间线</h3>
+                  <p class="card-sub">每一次打卡，记录症状如何变化</p>
+                </div>
+              </div>
+              <ol class="timeline" id="timeline"></ol>
+            </div>
+          </div>
+
+          <aside class="episode-side">
+            <div class="card side-card">
+              <h3>本次 Episode 摘要</h3>
+              <dl class="kv" id="ep-summary"></dl>
+            </div>
+            <div class="card side-card">
+              <h3>已排查的危险信号</h3>
+              <ul class="flag-list" id="flag-list"></ul>
+            </div>
+            <p class="side-note">以上为基于你自述的演示性建议，<strong>不替代专业医疗判断</strong>。</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Doctor Handoff 就医摘要 ============ -->
+    <section class="view" id="view-handoff" data-view="handoff">
+      <div class="handoff-shell">
+        <div class="handoff-toolbar">
+          <button class="btn btn-ghost" data-nav="episode">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+            返回 Episode
+          </button>
+          <div class="handoff-actions">
+            <button class="btn btn-subtle" id="btn-copy">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg>
+              复制摘要
+            </button>
+            <button class="btn btn-subtle" id="btn-print">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a2 2 0 01-2-2v-4a2 2 0 012-2h16a2 2 0 012 2v4a2 2 0 01-2 2h-2"/><path d="M6 14h12v7H6z"/></svg>
+              打印
+            </button>
+          </div>
+        </div>
+
+        <article class="handoff-doc" id="handoff-doc"></article>
+
+        <p class="handoff-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4.5M12 15.6v.2"/></svg>
+          本摘要由 AI 依据用户自述生成，未经医疗专业人员核实，仅供就诊沟通参考，不构成诊断或治疗建议。
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h3.2l2.1-5.6 3.6 11.2 2.4-5.6H21"/></svg></span>
+        <span>Episode · AI Health Navigator</span>
+      </div>
+      <p class="footer-disclaimer">
+        <strong>免责声明：</strong>本页面为产品概念演示，所有人物、症状与数据均为<strong>虚构</strong>。Episode 旨在辅助健康信息梳理与就医沟通，<strong>不提供、也不替代</strong>医生或其他合格医疗专业人员的诊断、治疗或建议。如有健康问题，请咨询专业医疗人员；紧急情况请拨打当地急救电话。
+      </p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
