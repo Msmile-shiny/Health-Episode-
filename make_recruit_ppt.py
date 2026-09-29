@@ -294,14 +294,15 @@ check_item(s, 5.35, '✓', MINT, '产品定位与核心流程',
 add_text(s, 0.9, 6.4, 5.6, 0.4, [
     {'text': '下一步：真实用户访谈 → 快速迭代 → 验证假设', 'size': 13.5, 'bold': True,
      'color': INK}])
-# 右侧：二维码占位
-qr = shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 7.6, 2.5, 4.7, 4.2, fill=WHITE,
-           line=LINE, line_w=1.4, radius=0.06)
-shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 8.85, 3.0, 2.2, 2.2, fill=BG, line=LINE, line_w=1.0, radius=0.06)
-add_text(s, 8.85, 5.3, 2.2, 0.4, [
-    {'text': 'Demo 二维码', 'size': 13, 'bold': True, 'color': TEAL}], align=PP_ALIGN.CENTER)
-add_text(s, 8.0, 5.8, 3.9, 0.7, [
-    {'text': '扫码体验可交互 Demo', 'size': 15, 'bold': True, 'color': INK}], align=PP_ALIGN.CENTER)
+# 右侧：Demo 二维码
+shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 7.6, 2.5, 4.7, 4.2, fill=WHITE,
+      line=LINE, line_w=1.4, radius=0.06)
+QR_PNG = r"C:\Users\29383\Documents\Codex\2026-09-29\referenced-chatgpt-conversation-this-is-an-2\outputs\episode\demo-qr.png"
+s.shapes.add_picture(QR_PNG, Inches(8.85), Inches(3.0), height=Inches(2.2))
+add_text(s, 8.85, 5.28, 2.2, 0.4, [
+    {'text': '扫码体验 Demo', 'size': 13, 'bold': True, 'color': TEAL}], align=PP_ALIGN.CENTER)
+add_text(s, 8.0, 5.72, 3.9, 0.7, [
+    {'text': 'msmile-shiny.github.io/Health-Episode-', 'size': 10, 'color': MUT}], align=PP_ALIGN.CENTER)
 footer(s, 6)
 
 # ============================================================
@@ -429,7 +430,7 @@ add_text(s, 0.9, 6.35, 11.5, 0.5, [
     {'text': '期待与你一起，从 0 做到 1。', 'size': 14, 'bold': True, 'color': TEAL}])
 footer(s, 11)
 
-out = r"C:\Users\29383\Documents\Codex\2026-09-29\referenced-chatgpt-conversation-this-is-an-2\outputs\episode\AI-Health-Navigator-Recruit.pptx"
+out = r"C:\Users\29383\Documents\Codex\2026-09-29\referenced-chatgpt-conversation-this-is-an-2\outputs\episode\AI-Health-Navigator-Recruit-v2.pptx"
 prs.save(out)
 print("saved:", out)
 print("slides:", len(prs.slides._sldIdLst))

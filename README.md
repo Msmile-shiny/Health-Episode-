@@ -25,6 +25,8 @@
 - `make_ppt.py` — 项目 Demo PPT 生成脚本
 - `make_recruit_ppt.py` — 团队招募页 PPT 生成脚本
 - `make_gif.py` — 演示动画 GIF 生成脚本
+- `make_qr.py` — 站点二维码生成脚本
 - `demo-reel.gif` — 演示动画
+- `demo-qr.png` — Demo 站点二维码
 - `AI-Health-Navigator-Demo-v3.pptx` — 项目 Demo PPT
-- `AI-Health-Navigator-Recruit.pptx` — 团队招募页 PPT
+- `AI-Health-Navigator-Recruit-v2.pptx` — 团队招募页 PPT
