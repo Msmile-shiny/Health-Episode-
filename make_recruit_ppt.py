@@ -306,6 +306,34 @@ add_text(s, 8.0, 5.72, 3.9, 0.7, [
 footer(s, 6)
 
 # ============================================================
+# 已经实现的例子（Demo 截图）
+# ============================================================
+s = light_slide()
+header(s, '已经实现', '已经实现的例子')
+_SHOT_DIR = r"C:\Users\29383\Documents\Codex\2026-09-29\referenced-chatgpt-conversation-this-is-an-2\outputs\episode"
+shots = [
+    ('demo-shot-landing.png', '首页 · 产品定位'),
+    ('demo-shot-intake.png', 'AI 结构化问询'),
+    ('demo-shot-episode.png', 'Episode 时间线 · 症状趋势'),
+    ('demo-shot-handoff.png', 'Doctor Handoff 就医摘要'),
+]
+iw, ih, gap = 2.66, 2.0, 0.3
+x = 0.9
+for fn, cap in shots:
+    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, x - 0.06, 2.24, iw + 0.12, ih + 0.12,
+          fill=WHITE, line=LINE, line_w=1.1, radius=0.04)
+    s.shapes.add_picture(_SHOT_DIR + '\\' + fn, Inches(x), Inches(2.3), width=Inches(iw))
+    add_text(s, x - 0.06, 4.42, iw + 0.12, 0.4, [
+        {'text': cap, 'size': 12.5, 'bold': True, 'color': INK}], align=PP_ALIGN.CENTER)
+    x += iw + gap
+add_text(s, 0.9, 5.15, 11.53, 0.4, [
+    {'runs': [
+        {'text': '四个核心页面均已实现、可交互', 'size': 13.5, 'bold': True, 'color': MUT},
+        {'text': '   （纯前端 · 虚构数据 · 不替代医疗建议）', 'size': 12.5, 'color': FAINT},
+    ]}], align=PP_ALIGN.CENTER)
+footer(s, 7)
+
+# ============================================================
 # 关于发起人（自我介绍）
 # ============================================================
 s = light_slide()
@@ -344,7 +372,7 @@ for (title, desc), (cx, cy) in zip(cards, pos):
         {'text': title, 'size': 15, 'bold': True, 'color': TEAL}])
     add_text(s, cx + 0.24, cy + 0.65, cw - 0.48, 1.0, [
         {'text': desc, 'size': 12, 'color': MUT, 'ls': 1.25}])
-footer(s, 7)
+footer(s, 8)
 
 # ============================================================
 # 7. 06 我们正在寻找谁
@@ -372,7 +400,7 @@ for en, zh, num in roles:
     x += cw + 0.1
 add_text(s, 0.9, 5.9, 11.5, 0.5, [
     {'text': '一个人扛不动一个产品；我们互补，一起把它跑起来。', 'size': 14, 'bold': True, 'color': INK}])
-footer(s, 8)
+footer(s, 9)
 
 # ============================================================
 # 8. 07 你会真正参与什么
@@ -398,7 +426,7 @@ add_text(s, 0.9, 4.9, 11.5, 1.3, [
      'size': 15, 'color': MUT, 'ls': 1.3, 'sa': 6},
     {'text': 'Demo → MVP → 真实用户 → 验证假设', 'size': 16, 'bold': True, 'color': TEAL},
 ])
-footer(s, 9)
+footer(s, 10)
 
 # ============================================================
 # 9. 08 希望找到怎样的队友
@@ -424,7 +452,7 @@ c = shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, 5.2, 11.5, 0.85, fill=TINT, radiu
 add_text(s, 1.25, 5.2, 10.8, 0.85, [
     {'text': '年级、经历不重要；重要的是，你想不想一起把这件事做成。', 'size': 15.5,
      'bold': True, 'color': TEAL}], anchor=MSO_ANCHOR.MIDDLE)
-footer(s, 10)
+footer(s, 11)
 
 # ============================================================
 # 10. 09 为什么加入
@@ -445,7 +473,7 @@ for t, d in items:
     add_text(s, x + 0.28, 3.5, 3.15, 1.5, [
         {'text': d, 'size': 13.5, 'color': MUT, 'ls': 1.35}])
     x += 3.9
-footer(s, 11)
+footer(s, 12)
 
 # ============================================================
 # 11. 10 招募方式
@@ -469,9 +497,9 @@ add_text(s, 1.35, 5.0, 10.6, 0.8, [
      'color': INK, 'ls': 1.2}])
 add_text(s, 0.9, 6.35, 11.5, 0.5, [
     {'text': '期待与你一起，从 0 做到 1。', 'size': 14, 'bold': True, 'color': TEAL}])
-footer(s, 12)
+footer(s, 13)
 
-out = r"C:\Users\29383\Documents\Codex\2026-09-29\referenced-chatgpt-conversation-this-is-an-2\outputs\episode\AI-Health-Navigator-Recruit-v3.pptx"
+out = r"C:\Users\29383\Documents\Codex\2026-09-29\referenced-chatgpt-conversation-this-is-an-2\outputs\episode\AI-Health-Navigator-Recruit-v4.pptx"
 prs.save(out)
 print("saved:", out)
 print("slides:", len(prs.slides._sldIdLst))
