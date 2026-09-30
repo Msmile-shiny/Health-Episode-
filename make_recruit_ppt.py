@@ -306,6 +306,47 @@ add_text(s, 8.0, 5.72, 3.9, 0.7, [
 footer(s, 6)
 
 # ============================================================
+# 关于发起人（自我介绍）
+# ============================================================
+s = light_slide()
+header(s, '关于发起人', '自我介绍')
+# 左侧：姓名 + 身份 + 简介
+shape_text(shape(s, MSO_SHAPE.OVAL, 0.95, 2.35, 0.9, 0.9, fill=MINT), '马', 28, TEAL_D, bold=True)
+add_text(s, 2.05, 2.5, 3.5, 0.5, [
+    {'runs': [
+        {'text': '马姝笑', 'size': 27, 'bold': True, 'color': INK},
+        {'text': '  Charlotte Ma', 'size': 14, 'color': MUT},
+    ]}])
+add_text(s, 0.95, 3.55, 4.6, 0.55, [
+    {'text': '北京大学工学院 · 理论与应用力学（强基计划）本科', 'size': 14, 'bold': True,
+     'color': TEAL, 'ls': 1.15}])
+add_text(s, 0.95, 4.2, 4.6, 1.5, [
+    {'text': '从中学带队机器人竞赛，到大学参加国际工程创新 Workshop——一直想做「真正能落地、对人有用的产品」。',
+     'size': 14, 'color': MUT, 'ls': 1.45}])
+shape(s, MSO_SHAPE.RECTANGLE, 0.98, 5.9, 0.9, 0.04, fill=MINT)
+add_text(s, 0.95, 6.08, 4.6, 0.85, [
+    {'text': '2600011055@stu.pku.edu.cn', 'size': 11.5, 'color': MUT, 'sa': 3},
+    {'text': 'github.com/Msmile-shiny', 'size': 11.5, 'color': MUT},
+])
+# 右侧：4 张能力卡
+cards = [
+    ('工程实践', '机器人竞赛团队组长 · 浙江省一等奖 / FLL 一等奖第一名'),
+    ('国际工程', 'Peter Childs 教授指导 Workshop，团队组长'),
+    ('AI 探索', 'Kaggle RSNA 膝部检测 · 具身智能实验室'),
+    ('双语表达', '外研社杯省决赛一等奖 · GoodTalk 一等奖'),
+]
+cw = 3.15
+pos = [(5.95, 2.4), (9.28, 2.4), (5.95, 4.45), (9.28, 4.45)]
+for (title, desc), (cx, cy) in zip(cards, pos):
+    shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, cx, cy, cw, 1.8, fill=WHITE,
+          line=LINE, line_w=1.1, radius=0.1)
+    add_text(s, cx + 0.24, cy + 0.2, cw - 0.48, 0.4, [
+        {'text': title, 'size': 15, 'bold': True, 'color': TEAL}])
+    add_text(s, cx + 0.24, cy + 0.65, cw - 0.48, 1.0, [
+        {'text': desc, 'size': 12, 'color': MUT, 'ls': 1.25}])
+footer(s, 7)
+
+# ============================================================
 # 7. 06 我们正在寻找谁
 # ============================================================
 s = light_slide()
@@ -331,7 +372,7 @@ for en, zh, num in roles:
     x += cw + 0.1
 add_text(s, 0.9, 5.9, 11.5, 0.5, [
     {'text': '一个人扛不动一个产品；我们互补，一起把它跑起来。', 'size': 14, 'bold': True, 'color': INK}])
-footer(s, 7)
+footer(s, 8)
 
 # ============================================================
 # 8. 07 你会真正参与什么
@@ -357,7 +398,7 @@ add_text(s, 0.9, 4.9, 11.5, 1.3, [
      'size': 15, 'color': MUT, 'ls': 1.3, 'sa': 6},
     {'text': 'Demo → MVP → 真实用户 → 验证假设', 'size': 16, 'bold': True, 'color': TEAL},
 ])
-footer(s, 8)
+footer(s, 9)
 
 # ============================================================
 # 9. 08 希望找到怎样的队友
@@ -383,7 +424,7 @@ c = shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.9, 5.2, 11.5, 0.85, fill=TINT, radiu
 add_text(s, 1.25, 5.2, 10.8, 0.85, [
     {'text': '年级、经历不重要；重要的是，你想不想一起把这件事做成。', 'size': 15.5,
      'bold': True, 'color': TEAL}], anchor=MSO_ANCHOR.MIDDLE)
-footer(s, 9)
+footer(s, 10)
 
 # ============================================================
 # 10. 09 为什么加入
@@ -404,7 +445,7 @@ for t, d in items:
     add_text(s, x + 0.28, 3.5, 3.15, 1.5, [
         {'text': d, 'size': 13.5, 'color': MUT, 'ls': 1.35}])
     x += 3.9
-footer(s, 10)
+footer(s, 11)
 
 # ============================================================
 # 11. 10 招募方式
@@ -428,9 +469,9 @@ add_text(s, 1.35, 5.0, 10.6, 0.8, [
      'color': INK, 'ls': 1.2}])
 add_text(s, 0.9, 6.35, 11.5, 0.5, [
     {'text': '期待与你一起，从 0 做到 1。', 'size': 14, 'bold': True, 'color': TEAL}])
-footer(s, 11)
+footer(s, 12)
 
-out = r"C:\Users\29383\Documents\Codex\2026-09-29\referenced-chatgpt-conversation-this-is-an-2\outputs\episode\AI-Health-Navigator-Recruit-v2.pptx"
+out = r"C:\Users\29383\Documents\Codex\2026-09-29\referenced-chatgpt-conversation-this-is-an-2\outputs\episode\AI-Health-Navigator-Recruit-v3.pptx"
 prs.save(out)
 print("saved:", out)
 print("slides:", len(prs.slides._sldIdLst))
